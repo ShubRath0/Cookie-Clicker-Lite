@@ -1,0 +1,149 @@
+/* --- Body Layout --- */
+body {
+    font-family: 'Comic Sans MS', Arial, sans-serif;
+    background: linear-gradient(120deg, #f8f0d3, #ffd57f);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* --- Heading --- */
+h1 {
+    color: #d88e3e;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px #b5853b;
+    margin-bottom: 30px;
+}
+
+/* --- Main Game Section --- */
+#gameSection {
+    margin-left: 240px; /* leave space for sidebar */
+    text-align: center;
+    padding: 50px;
+}
+
+/* --- Main Cookie Button --- */
+#cookieBtn {
+    font-size: 2rem;
+    padding: 20px 40px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid #d88e3e;
+    background: linear-gradient(to bottom, #ffe6a0, #ffc85c);
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 5px 0 #d88e3e, 0 10px 15px rgba(0,0,0,0.2);
+}
+
+#cookieBtn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to bottom, #fff2b8, #ffd45e);
+}
+
+#cookieBtn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 0 #d88e3e, 0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* --- Counter --- */
+p {
+    font-size: 2rem;
+    color: #b87733;
+    text-shadow: 1px 1px 2px #fff3d6;
+}
+
+/* --- Falling Cookies --- */
+.falling-cookie {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    transition: transform 1.5s linear, opacity 1.5s;
+    filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.3));
+    z-index: 1000;
+}
+
+/* --- Upgrade Sidebar --- */
+#upgradePanel {
+    width: 220px;
+    background: #ffe6a0;
+    padding: 20px;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#upgradePanel h2 {
+    text-align: center;
+    color: #d88e3e;
+    margin-bottom: 20px;
+}
+
+#upgradePanel button.upgrade {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #d88e3e;
+    background: linear-gradient(to bottom, #fff2b8, #ffd45e);
+    transition: all 0.15s ease-in-out;
+}
+
+#upgradePanel button.upgrade:hover {
+    transform: scale(1.05);
+}
+
+@keyframes bounceUp {
+    0% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        bottom: 55%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(-10%);
+    }
+    70% {
+        bottom: 50%;
+        transform: translateX(-50%) translateY(5%);
+    }
+    100% {
+        bottom: 50%;
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceDown {
+    0% {
+        bottom: 50%;
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+    100% {
+        bottom: -50px;
+        opacity: 0;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+#message {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff7f7f;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    z-index: 10000;
+}
